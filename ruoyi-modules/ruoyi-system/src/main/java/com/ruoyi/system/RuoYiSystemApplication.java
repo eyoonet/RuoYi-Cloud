@@ -1,17 +1,17 @@
 package com.ruoyi.system;
 
+import com.joe.common.security.annotation.EnableEcCustomConfig;
+import com.joe.common.security.annotation.EnableEcFeignClients;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.ruoyi.common.security.annotation.EnableCustomConfig;
-import com.ruoyi.common.security.annotation.EnableRyFeignClients;
 
 /**
  * 系统模块
  * 
  * @author ruoyi
  */
-@EnableCustomConfig
-@EnableRyFeignClients
+@EnableEcCustomConfig
+@EnableEcFeignClients
 @SpringBootApplication
 public class RuoYiSystemApplication
 {

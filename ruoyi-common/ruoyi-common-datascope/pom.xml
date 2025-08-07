@@ -22,6 +22,10 @@
             <groupId>com.ruoyi</groupId>
             <artifactId>ruoyi-common-security</artifactId>
         </dependency>
-        
+        <dependency>
+            <groupId>com.joe</groupId>
+            <artifactId>ec-common-security</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
