@@ -3,7 +3,7 @@ package com.ruoyi.system.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.validation.Validator;
+import jakarta.validation.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -238,7 +238,7 @@ public class SysUserServiceImpl implements ISysUserService
     @Override
     public void checkUserDataScope(Long userId)
     {
-        if (!SysUser.isAdmin(SecurityUtils.getUserId()))
+        if (!SecurityUtils.isAdmin())
         {
             SysUser user = new SysUser();
             user.setUserId(userId);
@@ -326,7 +326,7 @@ public class SysUserServiceImpl implements ISysUserService
     @Override
     public int updateUserStatus(SysUser user)
     {
-        return userMapper.updateUser(user);
+        return userMapper.updateUserStatus(user.getUserId(), user.getStatus());
     }
 
     /**
@@ -355,6 +355,17 @@ public class SysUserServiceImpl implements ISysUserService
     }
 
     /**
+     * 更新用户登录信息（IP和登录时间）
+     * 
+     * @param user 用户信息
+     * @return 结果
+     */
+    public boolean updateLoginInfo(SysUser user)
+    {
+        return userMapper.updateLoginInfo(user) > 0;
+    }
+
+    /**
      * 重置用户密码
      * 
      * @param user 用户信息
@@ -363,7 +374,7 @@ public class SysUserServiceImpl implements ISysUserService
     @Override
     public int resetPwd(SysUser user)
     {
-        return userMapper.updateUser(user);
+        return userMapper.resetUserPwd(user.getUserId(), user.getPassword());
     }
 
     /**
@@ -517,6 +528,7 @@ public class SysUserServiceImpl implements ISysUserService
                     checkUserDataScope(u.getUserId());
                     deptService.checkDeptDataScope(user.getDeptId());
                     user.setUserId(u.getUserId());
+                    user.setDeptId(u.getDeptId());
                     user.setUpdateBy(operName);
                     userMapper.updateUser(user);
                     successNum++;

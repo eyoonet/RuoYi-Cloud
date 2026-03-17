@@ -81,10 +81,10 @@
               >
             </p>
             <p>
-              <i class="el-icon-user-solid"></i> QQ群： <s> 满42799195 </s>  <s> 满170157040 </s>
+              <i class="el-icon-user-solid"></i> QQ群： <s> 满42799195  </s> <s> 满170157040 </s>
               <s> 满130643120 </s> <s> 满225920371 </s> <s> 满201705537 </s> <s> 满236543183 </s>
               <s> 满213618602 </s> <s> 满148794840 </s> <s> 满118752664 </s> <s> 满101038945 </s>
-              <s> 满128355254 </s> <s> 满179219821 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=Z6j1amUmIPBXamuZzxpwjY8GwaP45XB6&authKey=zfSnxECfnScfY1HLCWilSqCq%2BmSVtr%2Bi%2F4oXeBcuQVwlq6XlrAfbZ0awp3%2B4Bdec&noverify=0&group_code=158753145" target="_blank">158753145</a>
+              <s> 满128355254 </s> <s> 满179219821 </s> <s> 满158753145 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jR7HqTiLzuLocIH6aNNtTW3LlCV8UQ6d&authKey=GJZj%2Bnwmsvk6j%2FWrX7FKstAaRjgUC1WL%2F%2B8aVTaPbHX5wOimH5q9igaOSXP7cF9L&noverify=0&group_code=112869560" target="_blank">112869560</a>
             </p>
             <p>
               <i class="el-icon-chat-dot-round"></i> 微信：<a
@@ -108,6 +108,37 @@
             <span>更新日志</span>
           </div>
           <el-collapse accordion>
+            <el-collapse-item title="v3.6.7 - 2025-12-22">
+              <ol>
+                <li>支持防盗链功能</li>
+                <li>菜单导航设置支持纯顶部</li>
+                <li>用户头像更换后移除旧头像文件</li>
+                <li>支持Excel导出对象的多个子列表</li>
+                <li>升级druid到最新版本1.2.27</li>
+                <li>升级fastjson到最新版2.0.60</li>
+                <li>升级tomcat到最新版本9.0.112</li>
+                <li>升级commons.io到最新版本2.21.0</li>
+                <li>用户导入添加验证提示</li>
+                <li>显示列信息支持对象格式</li>
+                <li>网页标题设置新增SET_TITLE方法</li>
+                <li>自动识别json对象白名单配置范围缩小</li>
+                <li>登录/注册页面底部版权信息修改为读取配置</li>
+                <li>修复用户归属部门无法修改为空问题</li>
+                <li>修复固定头部时出现的导航栏偏移问题</li>
+                <li>修复v3时间控件between选择后清空报错问题</li>
+                <li>修复comboReadDict属性下多个sheet出现的报错</li>
+                <li>修复表单构建移除所有控件后切换路由回来空白问题</li>
+                <li>优化布局设置显示</li>
+                <li>优化字典组件值宽松匹配</li>
+                <li>优化生成代码下载的zip文件名</li>
+                <li>优化日志记录参数拼装提升效率</li>
+                <li>优化导入文件检查标题行不能为空</li>
+                <li>优化表单构建关闭页签销毁复制插件</li>
+                <li>优化Excel统计行数值的单元格样式显示</li>
+                <li>优化数据权限控制逻辑，放开permission限制</li>
+                <li>其他细节优化</li>
+              </ol>
+            </el-collapse-item>
             <el-collapse-item title="v3.6.6 - 2025-05-30">
               <ol>
                 <li>优化菜单搜索查询页</li>
@@ -956,7 +987,7 @@ export default {
   data() {
     return {
       // 版本号
-      version: "3.6.6"
+      version: "3.6.7"
     }
   },
   methods: {

@@ -1,8 +1,8 @@
 package com.ruoyi.gen.domain;
 
 import java.util.List;
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import org.apache.commons.lang3.ArrayUtils;
 import com.ruoyi.common.core.constant.GenConstants;
 import com.ruoyi.common.core.utils.StringUtils;
@@ -41,7 +41,7 @@ public class GenTable extends BaseEntity
     /** 使用的模板（crud单表操作 tree树表操作 sub主子表操作） */
     private String tplCategory;
 
-    /** 前端类型（element-ui模版 element-plus模版） */
+    /** 前端类型（element-ui模版 element-plus模版 element-plus-typescript模版） */
     private String tplWebType;
 
     /** 生成包路径 */
@@ -267,6 +267,7 @@ public class GenTable extends BaseEntity
     {
         this.subTable = subTable;
     }
+
     public List<GenTableColumn> getColumns()
     {
         return columns;
@@ -346,6 +347,7 @@ public class GenTable extends BaseEntity
     {
         return tplCategory != null && StringUtils.equals(GenConstants.TPL_SUB, tplCategory);
     }
+
     public boolean isTree()
     {
         return isTree(this.tplCategory);
